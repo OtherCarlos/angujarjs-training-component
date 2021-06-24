@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Ejercicio de AngularJs</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div ng-app="AppModule">
+        <section ng-controller="BankController">
+            <!-- Este div tiene un ng-repeat que ejecuta uno a uno el arreglo
+            de cuentas en accounts -> $scope.accounts -->
+            <div class="row"
+                ng-repeat="account in accounts">
+                <div class="col-md-12">
+                    <!-- Este componente tiene los siguientes bindings:
+                    account -> entrada -> < (El padre le envía al hijo)
+                    account-id -> salida -> & (El hijo emite datos al padre) llamando al método userSelectAnAccount -->
+                    <bank-component account="account" account-selected="userSelectAnAccount(accountId)"></bank-component>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    Seleccionaste la cuenta: {{selectedAccount}}
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+<script src="./node_modules/angular/angular.min.js"></script>
+<script src="./node_modules/angular/angular.min.js.map"></script>
+<script src="./js/app-module.js"></script>
+<script src="./js/bank-component.js"></script>

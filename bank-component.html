@@ -1,0 +1,20 @@
+<!-- Recuerden $ctrl se refiere a los datos del binding de otra no forma
+no podrán acceder a estos valores
+$ctrl es una palabra reservada -->
+<div class="row align-items-center">
+    <div class="col-md-6">
+        <!-- Aquí hay ternarios o condionales de una línea
+        Si esto se cumple ? Se ejecuta esta codigo : Sino este
+        $ctrl.account ? $ctrl.account.id : '' -->
+        <strong>Identificante: </strong>{{$ctrl.account ? $ctrl.account.id : ''}}<br />
+        <strong>Nombre: </strong>{{$ctrl.account ? $ctrl.account.name : ''}}<br />
+        <strong>Número de cuenta: </strong>{{$ctrl.account ? $ctrl.account.maskedNumber : ''}}<br />
+        <strong>Tipo: </strong>{{$ctrl.account ? $ctrl.account.type : ''}}<br />
+    </div>
+    <div class="col-md-6 text-end">
+        <!-- Aquí se accede al binding de salida accountSelected e invoca
+        al método executeOutput que existe en el component -->
+        <button ng-click="$ctrl.accountSelected(executeOutput())">Seleccionar</button>
+    </div>
+</div>
+<hr />
