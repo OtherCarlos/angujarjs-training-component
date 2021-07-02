@@ -2,7 +2,7 @@
   "name": "angujarjs-training-component",
   "version": "1.0.0",
   "description": "Proyecto de prueba con npm",
-  "author": "BG Trainer",
+  "author": "Trainer",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.8.2",
